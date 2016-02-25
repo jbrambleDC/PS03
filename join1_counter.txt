@@ -1,0 +1,7 @@
+Counters from step 1:
+  Info:
+    Name Count: 1517316
+    Obs Count: 998
+  Warn:
+    country without Name: 790560
+

@@ -1,0 +1,30 @@
+# ANLY502
+# Please provide your answers to the questions below:
+
+# Question #1:
+1a: (instancetype, per-hour-cost)
+1b: 
+1c:
+
+# Question 2:
+2a: YYYY-MM-DDTHH:MM:SS
+2b:
+2c:
+2d:
+2e:
+<put the multi-line output of "df -h" here>
+
+2f: <put the Java version number here here>
+2g: <availability zone>
+2g: <instance-ID>
+2i:
+<put the multi-line traceroute here>
+
+
+
+# Question 3:
+3a: 
+3b: 
+3c:
+<put the multi-line output here>
+
