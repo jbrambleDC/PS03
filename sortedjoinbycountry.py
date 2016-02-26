@@ -52,12 +52,12 @@ class FwikiMaxmindJoin(MRJob):
     def reducer_counter(self, key, values):
         yield key, sum(values)
 
-    def top_mapper(self, word, count):
-        yield "Top", (count,word)
+    def top_mapper(self, country, count):
+        yield "Top", (count,country)
 
     def top_reducer(self, key, values):
-        vals = [val for val in values]
-        yield sorted(vals, key=lambda x: x[1])
+        for v in values:
+            yield v[1], v[0]
 
     def steps(self):
         return [
