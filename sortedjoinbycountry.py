@@ -44,19 +44,18 @@ class FwikiMaxmindJoin(MRJob):
                 obs = v[1]
                 if name:
                     yield name, 1
-                   
+
     def mapper_counter(self, key, values):
-	yield key, 1
+        yield key, 1
 
     def reducer_counter(self, key, values):
         yield key, sum(values)
 
     def top10_mapper(self, word, count):
-        yield "Top10", (count,word) 
+        yield "Top", (count,word)
 
     def top10_reducer(self, key, values):
-	for values in heapq.nlargest(10,values):
-	    yield values
+        yield sorted(values, key=lambda x: x[0])
 
     def steps(self):
         return [
@@ -66,7 +65,7 @@ class FwikiMaxmindJoin(MRJob):
             MRStep(mapper=self.mapper_counter,
                    reducer=self.reducer_counter),
 
-	    MRStep(mapper=self.top10_mapper,
+            MRStep(mapper=self.top10_mapper,
                    reducer=self.top10_reducer) ]
 
 if __name__=="__main__":
