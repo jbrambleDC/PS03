@@ -9,14 +9,14 @@ class wikipedia_stats(MRJob):
     SORT_VALUES = True
 
     def mapper(self, _, line):
-    article = line.split('\t')[2]
+        article = line.split('\t')[2]
         date = article.split(' ')
-    day = date[0].split('-')
+        day = date[0].split('-')
         specificmonth = day[0]+'-'+day[1]
         yield specificmonth, 1
 
     def reducer(self, key, value):
-    yield key, sum(value)
+        yield key, sum(value)
 
     def mapper_two(self, key, value):
         yield "Wiki", (key, value)
