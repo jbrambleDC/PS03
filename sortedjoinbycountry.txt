@@ -1,10 +1,31 @@
-2490	"United States"
-1888	"China"
-266	"Czech Republic"
-163	"United Kingdom"
-126	"Belgium"
-74	"Canada"
-71	"Brazil"
-47	"Germany"
-45	"France"
-23	"Switzerland"
+"Hong Kong"     1
+"Spain" 1
+"France"        105
+"Germany"       105
+"Italy" 11
+"Sweden"        12
+"Finland"       13
+"Russia"        13
+"Canada"        132
+"India" 17
+"Ukraine"       20
+"Norway"        23
+"United Kingdom"        269
+"Singapore"     28
+"Israel"        3
+"Switzerland"   31
+"China" 3300
+"Monaco"        365
+"Czech Republic"        372
+"Estonia"       4
+"Republic of Korea"     4
+"United States" 4095
+"Netherlands"   45
+"Belgium"       470
+"Macao" 5
+"Australia"     54
+"Ireland"       6
+"Japan" 7
+"Turkey"        7
+"Brazil"        74
+"Austria"       8
