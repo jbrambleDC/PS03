@@ -2,29 +2,104 @@
 # Please provide your answers to the questions below:
 
 # Question #1:
-1a: (instancetype, per-hour-cost)
-1b: 
-1c:
+1a: (r3.8xlarge, 340.48)
+1b: (r3.8xlarge, 340.48)
+1c: (g2.8xlarge, 332.80)
 
 # Question 2:
-2a: YYYY-MM-DDTHH:MM:SS
-2b:
-2c:
-2d:
+2a: 2016-02-12T12:19:55 AM
+2b: 2016-02-12T05:30:35,024822414+0000
+2c: 05:31:10 up 10 min,  1 user,  load average: 0.00, 0.03, 0.05
+2d: ~ 1 minute and 15 seconds
 2e:
-<put the multi-line output of "df -h" here>
-
-2f: <put the Java version number here here>
-2g: <availability zone>
-2g: <instance-ID>
+df -kh
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/xvda1      7.8G  1.2G  6.6G  15% /
+devtmpfs        489M   56K  489M   1% /dev
+tmpfs           498M     0  498M   0% /dev/shm
+2f: java version "1.7.0_95"
+2g: us-east-1c
+2g: i-04512b84
 2i:
-<put the multi-line traceroute here>
+[ec2-user@ip-172-31-53-103 ~]$ traceroute www.qwest.net
+traceroute to www.qwest.net (204.147.80.94), 30 hops max, 60 byte packets
+ 1  216.182.232.166 (216.182.232.166)  2.881 ms  3.130 ms  3.487 ms
+ 2  100.64.2.221 (100.64.2.221)  1.937 ms 100.64.2.217 (100.64.2.217)  1.853 ms  1.846 ms
+ 3  100.64.9.102 (100.64.9.102)  2.099 ms 100.64.11.184 (100.64.11.184)  1.572 ms 100.64.12.246 (100.64.12.246)  2.201 ms
+ 4  100.65.2.240 (100.65.2.240)  14.168 ms 100.65.2.144 (100.65.2.144)  14.319 ms 100.65.3.208 (100.65.3.208)  16.399 ms
+ 5  100.66.0.140 (100.66.0.140)  16.825 ms 100.66.0.134 (100.66.0.134)  15.323 ms 100.66.0.196 (100.66.0.196)  13.335 ms
+ 6  100.66.2.134 (100.66.2.134)  17.089 ms 100.66.3.12 (100.66.3.12)  21.995 ms 100.66.3.14 (100.66.3.14)  16.237 ms
+ 7  100.66.6.143 (100.66.6.143)  22.250 ms 100.66.7.67 (100.66.7.67)  19.073 ms 100.66.7.165 (100.66.7.165)  21.220 ms
 
+ 8  * * *
+ 9  100.65.10.33 (100.65.10.33)  0.681 ms 100.65.9.193 (100.65.9.193)  0.841 ms 100.65.10.161 (100.65.10.161)  0.862 ms
+10  205.251.245.120 (205.251.245.120)  2.893 ms  1.963 ms 205.251.244.230 (205.251.244.230)  1.961 ms
+11  54.239.111.104 (54.239.111.104)  23.568 ms 54.239.109.250 (54.239.109.250)  16.862 ms 54.239.111.108 (54.239.111.108)  24.566 ms
+12  54.239.109.229 (54.239.109.229)  1.728 ms  1.714 ms 54.239.109.221 (54.239.109.221)  2.286 ms
+13  dca2-edge-01.inet.qwest.net (65.120.78.81)  2.014 ms dca-edge-20.inet.qwest.net (67.133.224.193)  2.408 ms dca2-edge-01.inet.qwest.net (67.133.224.205)  1.999 ms
+14  min-core-01.inet.qwest.net (67.14.21.110)  32.023 ms  32.085 ms  32.479 ms
+15  min-svcs-02.inet.qwest.net (207.225.159.211)  32.479 ms  31.895 ms  32.187 ms
+16  www.qwest.net (204.147.80.94)  32.864 ms  32.634 ms  32.434 ms
 
 
 # Question 3:
-3a: 
-3b: 
+3a:52.87.170.69, 52.90.19.239, 52.90.242.220
+3b: 172.31.25.89, 172.31.25.88, 172.31.18.42
 3c:
 <put the multi-line output here>
+[hadoop@ip-172-31-20-89 ~]$ hdfs dfsadmin -report
+Configured Capacity: 158801608704 (147.90 GB)
+Present Capacity: 158427996289 (147.55 GB)
+DFS Remaining: 157919903744 (147.07 GB)
+DFS Used: 508092545 (484.55 MB)
+DFS Used%: 0.32%
+Under replicated blocks: 408
+Blocks with corrupt replicas: 0
+Missing blocks: 0
+Missing blocks (with replication factor 1): 0
 
+-------------------------------------------------
+Live datanodes (2):
+
+Name: 172.31.24.12:50010 (ip-172-31-24-12.ec2.internal)
+Hostname: ip-172-31-24-12.ec2.internal
+Decommission Status : Normal
+Configured Capacity: 79400804352 (73.95 GB)
+DFS Used: 254013081 (242.25 MB)
+Non DFS Used: 187220327 (178.55 MB)
+DFS Remaining: 78959570944 (73.54 GB)
+DFS Used%: 0.32%
+DFS Remaining%: 99.44%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 1
+Last contact: Tue Feb 23 03:57:32 UTC 2016
+
+
+Name: 172.31.24.13:50010 (ip-172-31-24-13.ec2.internal)
+Hostname: ip-172-31-24-13.ec2.internal
+Decommission Status : Normal
+Configured Capacity: 79400804352 (73.95 GB)
+DFS Used: 254079464 (242.31 MB)
+Non DFS Used: 186392088 (177.76 MB)
+DFS Remaining: 78960332800 (73.54 GB)
+DFS Used%: 0.32%
+DFS Remaining%: 99.45%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 1
+Last contact: Tue Feb 23 03:57:33 UTC 2016
+
+3d.
+[hadoop@ip-172-31-20-89 ~]$ yarn node -list -all
+16/02/23 03:58:03 INFO client.RMProxy: Connecting to ResourceManager at ip-172-31-20-89.ec2.internal/172.31.20.89:8032
+Total Nodes:2
+         Node-Id         Node-State Node-Http-Address   Number-of-Running-Containers
+ip-172-31-24-13.ec2.internal:8041           RUNNING ip-172-31-24-13.ec2.internal:8042                              0
+ip-172-31-24-12.ec2.internal:8041           RUNNING ip-172-31-24-12.ec2.internal:8042                              0
